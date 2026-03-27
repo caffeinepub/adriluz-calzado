@@ -8,49 +8,49 @@
   :root {
     --radius: 0.5rem;
 
-    /* Adriluz purple palette */
-    --background: 0.96 0.015 300;
-    --foreground: 0.18 0.03 300;
+    /* YilertBarber — sky blue + gold palette */
+    --background: 0.97 0.01 220;
+    --foreground: 0.18 0.04 230;
     --card: 1 0 0;
-    --card-foreground: 0.18 0.03 300;
+    --card-foreground: 0.18 0.04 230;
     --popover: 1 0 0;
-    --popover-foreground: 0.18 0.03 300;
+    --popover-foreground: 0.18 0.04 230;
 
-    /* Medium purple primary */
-    --primary: 0.5 0.18 300;
+    /* Sky blue primary */
+    --primary: 0.65 0.18 220;
     --primary-foreground: 1 0 0;
 
-    /* Lighter purple secondary */
-    --secondary: 0.75 0.1 300;
-    --secondary-foreground: 0.18 0.03 300;
+    /* Gold accent as secondary */
+    --secondary: 0.75 0.15 75;
+    --secondary-foreground: 0.18 0.04 230;
 
-    --muted: 0.92 0.02 300;
-    --muted-foreground: 0.5 0.04 300;
+    --muted: 0.93 0.02 220;
+    --muted-foreground: 0.5 0.05 225;
 
-    --accent: 0.9 0.03 300;
-    --accent-foreground: 0.18 0.03 300;
+    --accent: 0.9 0.04 220;
+    --accent-foreground: 0.18 0.04 230;
 
     --destructive: 0.577 0.245 27.325;
     --destructive-foreground: 1 0 0;
 
-    --border: 0.88 0.03 300;
-    --input: 0.88 0.03 300;
-    --ring: 0.5 0.18 300;
+    --border: 0.88 0.03 220;
+    --input: 0.88 0.03 220;
+    --ring: 0.65 0.18 220;
 
-    --chart-1: 0.5 0.18 300;
-    --chart-2: 0.65 0.12 300;
-    --chart-3: 0.65 0.15 155;
-    --chart-4: 0.35 0.15 300;
-    --chart-5: 0.5 0.04 300;
+    --chart-1: 0.65 0.18 220;
+    --chart-2: 0.75 0.15 75;
+    --chart-3: 0.5 0.18 220;
+    --chart-4: 0.35 0.12 230;
+    --chart-5: 0.65 0.15 155;
 
-    --sidebar: 0.94 0.02 300;
-    --sidebar-foreground: 0.18 0.03 300;
-    --sidebar-primary: 0.5 0.18 300;
+    --sidebar: 0.95 0.02 220;
+    --sidebar-foreground: 0.18 0.04 230;
+    --sidebar-primary: 0.65 0.18 220;
     --sidebar-primary-foreground: 1 0 0;
-    --sidebar-accent: 0.9 0.03 300;
-    --sidebar-accent-foreground: 0.18 0.03 300;
-    --sidebar-border: 0.88 0.03 300;
-    --sidebar-ring: 0.5 0.18 300;
+    --sidebar-accent: 0.9 0.04 220;
+    --sidebar-accent-foreground: 0.18 0.04 230;
+    --sidebar-border: 0.88 0.03 220;
+    --sidebar-ring: 0.65 0.18 220;
   }
 
   * {

@@ -1,68 +1,58 @@
-import { CreditCard, MousePointer, ShoppingBag, Truck } from "lucide-react";
 import { motion } from "motion/react";
 
 const steps = [
   {
-    icon: MousePointer,
-    title: "Elige tu modelo",
-    desc: "Explora nuestro catálogo y selecciona el par perfecto para ti",
+    number: "01",
+    title: "Escríbenos por WhatsApp",
+    desc: "Envíanos un mensaje con tu disponibilidad y el corte que deseas. Te respondemos enseguida.",
+    icon: "💬",
   },
   {
-    icon: ShoppingBag,
-    title: "Agrega al carrito",
-    desc: "Añade tus productos favoritos y revisa tu pedido",
+    number: "02",
+    title: "Agendamos tu cita",
+    desc: "Coordinamos el día y la hora que mejor te convenga. Sin complicaciones.",
+    icon: "📅",
   },
   {
-    icon: Truck,
-    title: "Enviamos a tu puerta",
-    desc: "Hacemos el envío directo a tu domicilio, rápido y seguro",
-  },
-  {
-    icon: CreditCard,
-    title: "Paga al recibir",
-    desc: "Sin pagos anticipados — pagas cuando recibas tu pedido",
+    number: "03",
+    title: "Yelier va a tu casa",
+    desc: "Nuestro barbero llega puntual a tu domicilio con todos los equipos. ¡Disfruta el servicio!",
+    icon: "🏠",
   },
 ];
 
 export default function HowItWorks() {
   return (
-    <section className="py-16 bg-background" data-ocid="howworks.section">
+    <section className="py-20 bg-brand-dark" data-ocid="howworks.section">
       <div className="container max-w-7xl mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-12"
-        >
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
-            ¿Cómo funciona?
+        <div className="text-center mb-14">
+          <span className="inline-block bg-brand-sky/20 text-brand-sky font-body font-semibold text-xs uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
+            ¿Cómo Funciona?
+          </span>
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-white">
+            3 pasos para tu corte perfecto
           </h2>
-          <p className="mt-2 font-body text-muted-foreground">
-            Comprar tus zapatos es muy fácil
-          </p>
-        </motion.div>
+        </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {steps.map((step, i) => (
             <motion.div
-              key={step.title}
-              initial={{ opacity: 0, y: 30 }}
+              key={step.number}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="text-center"
+              transition={{ duration: 0.5, delay: i * 0.15 }}
+              data-ocid={`howworks.item.${i + 1}`}
+              className="relative bg-white/5 border border-white/10 rounded-2xl p-8 text-center hover:bg-white/8 transition-colors"
             >
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-brand-rose/10 text-brand-rose mb-4">
-                <step.icon className="h-7 w-7" />
+              <div className="text-5xl mb-4">{step.icon}</div>
+              <div className="font-display text-4xl font-bold text-brand-gold/30 mb-2">
+                {step.number}
               </div>
-              <div className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-brand-rose text-white text-xs font-body font-bold mb-3">
-                {i + 1}
-              </div>
-              <h3 className="font-display font-semibold text-foreground text-lg">
+              <h3 className="font-display text-xl font-bold text-white mb-3">
                 {step.title}
               </h3>
-              <p className="font-body text-muted-foreground text-sm mt-2 leading-relaxed">
+              <p className="font-body text-white/60 leading-relaxed text-sm">
                 {step.desc}
               </p>
             </motion.div>

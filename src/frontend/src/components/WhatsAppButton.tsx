@@ -2,10 +2,10 @@ import { motion } from "motion/react";
 import { SiWhatsapp } from "react-icons/si";
 
 const WA_GREETING =
-  "¡Hola Luz Adriani! 😊 Visité la tienda de Adriluz Calzado y me gustaría recibir más información sobre sus productos. ¡Gracias!";
+  "¡Hola Yelier! 😊 Vi tu página de YilertBarber y me gustaría agendar un corte. ¡Gracias!";
 
 export default function WhatsAppButton() {
-  const href = `https://wa.me/584245488229?text=${encodeURIComponent(WA_GREETING)}`;
+  const href = `https://wa.me/584266137046?text=${encodeURIComponent(WA_GREETING)}`;
 
   return (
     <motion.a
@@ -20,7 +20,7 @@ export default function WhatsAppButton() {
       className="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-brand-whatsapp text-white px-5 py-3 rounded-full shadow-elevated font-body font-semibold text-sm"
     >
       <SiWhatsapp className="h-5 w-5" />
-      ¡Contáctanos por WhatsApp!
+      ¡Agendar por WhatsApp!
     </motion.a>
   );
 }

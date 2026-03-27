@@ -1,113 +1,89 @@
-import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
 import { motion } from "motion/react";
 
-interface HeroProps {
-  onViewCatalog: () => void;
-}
+const WA_LINK = `https://wa.me/584266137046?text=${encodeURIComponent("¡Hola Yelier! 😊 Vi tu página de YilertBarber y me gustaría agendar un corte. ¡Gracias!")}`;
 
-export default function Hero({ onViewCatalog }: HeroProps) {
+export default function Hero() {
   return (
     <section
       id="inicio"
-      className="relative bg-brand-cream overflow-hidden"
+      className="relative bg-brand-dark overflow-hidden"
       data-ocid="hero.section"
     >
-      {/* Background pattern */}
+      {/* Gold accent stripe */}
+      <div className="absolute top-0 left-0 right-0 h-1 bg-brand-gold" />
+
+      {/* Pattern overlay */}
       <div
         className="absolute inset-0 opacity-5"
         style={{
           backgroundImage:
-            "radial-gradient(circle at 2px 2px, oklch(0.52 0.068 12) 1px, transparent 0)",
-          backgroundSize: "32px 32px",
+            "radial-gradient(circle at 2px 2px, oklch(0.65 0.18 220) 1px, transparent 0)",
+          backgroundSize: "28px 28px",
         }}
       />
 
-      <div className="container max-w-7xl mx-auto px-4 py-16 md:py-24">
-        <div className="grid md:grid-cols-2 gap-8 items-center">
-          {/* Text */}
+      <div className="container max-w-7xl mx-auto px-4 py-20 md:py-32 relative">
+        <div className="max-w-2xl">
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
-            className="space-y-6"
           >
-            <p className="text-sm font-body text-brand-tan font-semibold uppercase tracking-widest">
-              📍 Venezuela · Envíos a Domicilio
-            </p>
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-              Zapatos para{" "}
-              <em className="text-brand-rose not-italic">toda tu familia</em>
+            <span className="inline-flex items-center gap-2 bg-brand-sky/20 text-brand-sky border border-brand-sky/30 text-xs font-body font-semibold uppercase tracking-widest px-4 py-1.5 rounded-full mb-6">
+              ✂️ Barbería Profesional a Domicilio
+            </span>
+            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6">
+              Tu barbero{" "}
+              <em className="text-brand-gold not-italic">a domicilio</em>
             </h1>
-            <p className="font-body text-muted-foreground text-lg leading-relaxed">
-              Descubre nuestra colección de calzado para damas, caballeros,
-              niñas y niños. Hacemos envíos a domicilio —{" "}
-              <span className="font-semibold text-foreground">
-                ¡pagas al recibir!
+            <p className="font-body text-white/70 text-lg md:text-xl leading-relaxed mb-8">
+              Yelier Hernandez viene hasta tu casa para darte el corte que
+              quieres. Sin colas, sin esperas.{" "}
+              <span className="font-semibold text-white">
+                ¡Solo agenda y listo!
               </span>
             </p>
-            <div className="flex flex-wrap gap-3">
-              <Button
-                onClick={onViewCatalog}
-                data-ocid="hero.primary_button"
-                size="lg"
-                className="bg-brand-rose hover:bg-brand-rose/90 text-white font-body font-semibold rounded-full px-8 shadow-elevated"
-              >
-                Ver Catálogo <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
+            <div className="flex flex-wrap gap-4">
               <a
-                href="https://wa.me/584245488229"
+                href={WA_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
-                data-ocid="hero.secondary_button"
-                className="inline-flex items-center gap-2 px-8 py-3 rounded-full border-2 border-brand-rose text-brand-rose font-body font-semibold hover:bg-brand-rose hover:text-white transition-colors text-base"
+                data-ocid="hero.primary_button"
+                className="inline-flex items-center gap-2 bg-brand-sky hover:bg-brand-sky/90 text-white font-body font-bold text-base px-8 py-3.5 rounded-full shadow-elevated transition-colors"
               >
-                Haz tu Pedido
+                ✂️ Agendar Corte
+              </a>
+              <a
+                href="#galeria"
+                data-ocid="hero.secondary_button"
+                className="inline-flex items-center gap-2 border-2 border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-dark font-body font-bold text-base px-8 py-3.5 rounded-full transition-colors"
+              >
+                Ver Galería
               </a>
             </div>
           </motion.div>
 
-          {/* Image collage */}
+          {/* Stats row */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
-            className="relative h-72 md:h-96"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
+            className="flex flex-wrap gap-8 mt-14 pt-8 border-t border-white/10"
           >
-            <div className="absolute inset-0 grid grid-cols-2 gap-3">
-              <div className="space-y-3">
-                <div className="rounded-2xl overflow-hidden h-48 shadow-card">
-                  <img
-                    src="/assets/uploads/img-20260326-wa0079-019d2b57-0e65-73ed-8512-b3fb9c47c1e9-1.jpg"
-                    alt="Tacón Zafiro"
-                    className="w-full h-full object-cover"
-                  />
+            {[
+              { value: "100%", label: "A domicilio" },
+              { value: "✂️", label: "Cortes profesionales" },
+              { value: "📍", label: "Venezuela" },
+            ].map(({ value, label }) => (
+              <div key={label}>
+                <div className="font-display text-2xl font-bold text-brand-gold">
+                  {value}
                 </div>
-                <div className="rounded-2xl overflow-hidden h-36 shadow-card">
-                  <img
-                    src="/assets/uploads/img-20260326-wa0060_1-019d2b57-1037-7387-871b-6132749c2c38-6.jpg"
-                    alt="Zapatillas cuero"
-                    className="w-full h-full object-cover"
-                  />
+                <div className="font-body text-sm text-white/60 mt-0.5">
+                  {label}
                 </div>
               </div>
-              <div className="space-y-3 pt-6">
-                <div className="rounded-2xl overflow-hidden h-40 shadow-card">
-                  <img
-                    src="/assets/uploads/img-20260326-wa0069-019d2b57-0f96-7003-a8d5-54f3f2221f22-4.jpg"
-                    alt="Colección sandalias"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="rounded-2xl overflow-hidden h-44 shadow-card">
-                  <img
-                    src="/assets/uploads/img-20260326-wa0056-019d2b57-0fbc-74de-a35c-47285ae6832d-5.jpg"
-                    alt="Zapatos hombre"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
-            </div>
+            ))}
           </motion.div>
         </div>
       </div>

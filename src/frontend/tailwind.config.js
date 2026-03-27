@@ -71,11 +71,11 @@ export default {
           ring: "oklch(var(--sidebar-ring))",
         },
         brand: {
-          rose: "oklch(0.50 0.18 300)",
-          tan: "oklch(0.65 0.12 300)",
-          cream: "oklch(0.96 0.015 300)",
-          dark: "oklch(0.18 0.03 300)",
-          slate: "oklch(0.35 0.15 300)",
+          sky: "oklch(0.65 0.18 220)",
+          gold: "oklch(0.75 0.15 75)",
+          cream: "oklch(0.97 0.01 220)",
+          dark: "oklch(0.18 0.04 230)",
+          navy: "oklch(0.22 0.06 235)",
           whatsapp: "oklch(0.65 0.15 155)",
         },
       },
@@ -86,8 +86,8 @@ export default {
       },
       boxShadow: {
         xs: "0 1px 2px 0 rgba(0,0,0,0.05)",
-        card: "0 2px 16px 0 rgba(31,23,22,0.08)",
-        elevated: "0 8px 32px 0 rgba(31,23,22,0.12)",
+        card: "0 2px 16px 0 rgba(10,25,47,0.08)",
+        elevated: "0 8px 32px 0 rgba(10,25,47,0.15)",
       },
       keyframes: {
         "accordion-down": {
