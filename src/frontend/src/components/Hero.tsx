@@ -1,91 +1,111 @@
+import { Button } from "@/components/ui/button";
+import { ArrowDown, MessageCircle } from "lucide-react";
 import { motion } from "motion/react";
 
-const WA_LINK = `https://wa.me/584266137046?text=${encodeURIComponent("¡Hola Yelier! 😊 Vi tu página de YilertBarber y me gustaría agendar un corte. ¡Gracias!")}`;
+const WA_LINK =
+  "https://wa.me/584125828010?text=%C2%A1Hola%20Luz!%20Me%20interesa%20tu%20servicio%20de%20creaci%C3%B3n%20de%20p%C3%A1ginas%20web.%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre...";
 
 export default function Hero() {
   return (
     <section
       id="inicio"
-      className="relative bg-brand-dark overflow-hidden"
-      data-ocid="hero.section"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Gold accent stripe */}
-      <div className="absolute top-0 left-0 right-0 h-1 bg-brand-gold" />
-
-      {/* Pattern overlay */}
+      {/* Background image */}
       <div
-        className="absolute inset-0 opacity-5"
+        className="absolute inset-0 bg-cover bg-center"
         style={{
           backgroundImage:
-            "radial-gradient(circle at 2px 2px, oklch(0.65 0.18 220) 1px, transparent 0)",
-          backgroundSize: "28px 28px",
+            "url('/assets/generated/hero-luz-perez.dim_1200x600.jpg')",
         }}
       />
+      {/* Gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-black/90 via-brand-garnet/60 to-black/80" />
+      {/* Fuchsia accent line */}
+      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-brand-gold to-transparent" />
 
-      <div className="container max-w-7xl mx-auto px-4 py-20 md:py-32 relative">
-        <div className="max-w-2xl">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
-          >
-            <span className="inline-flex items-center gap-2 bg-brand-sky/20 text-brand-sky border border-brand-sky/30 text-xs font-body font-semibold uppercase tracking-widest px-4 py-1.5 rounded-full mb-6">
-              ✂️ Barbería Profesional a Domicilio
-            </span>
-            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6">
-              Tu barbero{" "}
-              <em className="text-brand-gold not-italic">a domicilio</em>
-            </h1>
-            <p className="font-body text-white/70 text-lg md:text-xl leading-relaxed mb-8">
-              Yelier Hernandez viene hasta tu casa para darte el corte que
-              quieres. Sin colas, sin esperas.{" "}
-              <span className="font-semibold text-white">
-                ¡Solo agenda y listo!
-              </span>
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <a
-                href={WA_LINK}
-                target="_blank"
-                rel="noopener noreferrer"
-                data-ocid="hero.primary_button"
-                className="inline-flex items-center gap-2 bg-brand-sky hover:bg-brand-sky/90 text-white font-body font-bold text-base px-8 py-3.5 rounded-full shadow-elevated transition-colors"
-              >
-                ✂️ Agendar Corte
-              </a>
-              <a
-                href="#galeria"
-                data-ocid="hero.secondary_button"
-                className="inline-flex items-center gap-2 border-2 border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-dark font-body font-bold text-base px-8 py-3.5 rounded-full transition-colors"
-              >
-                Ver Galería
-              </a>
-            </div>
-          </motion.div>
+      <div className="relative z-10 container mx-auto text-center px-4 py-32">
+        {/* Eyebrow */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="inline-flex items-center gap-2 bg-brand-garnet/20 border border-brand-garnet/50 rounded-full px-4 py-1.5 mb-6"
+        >
+          <span className="w-2 h-2 rounded-full bg-brand-gold animate-pulse" />
+          <span className="text-brand-gold text-sm font-semibold tracking-wide">
+            Creadora Digital en Venezuela
+          </span>
+        </motion.div>
 
-          {/* Stats row */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
-            className="flex flex-wrap gap-8 mt-14 pt-8 border-t border-white/10"
+        {/* Headline */}
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.15 }}
+          className="font-display text-5xl md:text-7xl font-bold text-white leading-tight mb-6"
+        >
+          Impulsa Tu
+          <br />
+          <span className="text-brand-gold italic">Emprendimiento</span>
+          <br />
+          Digital
+        </motion.h1>
+
+        {/* Subtext */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="font-body text-white/85 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed"
+        >
+          Creo páginas web profesionales para negocios, matrimonios, músicos y
+          creadores de contenido. Tu presencia digital, a tu medida.
+        </motion.p>
+
+        {/* CTAs */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.45 }}
+          className="flex flex-col sm:flex-row gap-4 justify-center"
+        >
+          <a href={WA_LINK} target="_blank" rel="noopener noreferrer">
+            <Button
+              size="lg"
+              className="bg-brand-garnet hover:bg-brand-garnet/90 text-white font-bold gap-2 shadow-elevated px-8 py-6 text-base"
+              data-ocid="hero.primary_button"
+            >
+              <MessageCircle className="h-5 w-5" />
+              Solicitar mi página ahora
+            </Button>
+          </a>
+          <a href="#servicios">
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-brand-gold/60 text-white hover:bg-brand-garnet/20 px-8 py-6 text-base"
+              data-ocid="hero.secondary_button"
+            >
+              Ver servicios
+            </Button>
+          </a>
+        </motion.div>
+
+        {/* Scroll indicator */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.2 }}
+          className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        >
+          <a
+            href="#servicios"
+            className="text-white/60 hover:text-brand-gold transition-colors"
           >
-            {[
-              { value: "100%", label: "A domicilio" },
-              { value: "✂️", label: "Cortes profesionales" },
-              { value: "📍", label: "Venezuela" },
-            ].map(({ value, label }) => (
-              <div key={label}>
-                <div className="font-display text-2xl font-bold text-brand-gold">
-                  {value}
-                </div>
-                <div className="font-body text-sm text-white/60 mt-0.5">
-                  {label}
-                </div>
-              </div>
-            ))}
-          </motion.div>
-        </div>
+            <ArrowDown className="h-6 w-6 animate-bounce" />
+          </a>
+        </motion.div>
       </div>
     </section>
   );

@@ -1,97 +1,50 @@
-import { MapPin, Phone } from "lucide-react";
-import { SiWhatsapp } from "react-icons/si";
+import { Heart, Mail, MessageCircle } from "lucide-react";
 
-const WA_GREETING =
-  "¡Hola Yelier! 😊 Vi tu página de YilertBarber y me gustaría agendar un corte. ¡Gracias!";
-
-function waLink() {
-  return `https://wa.me/584266137046?text=${encodeURIComponent(WA_GREETING)}`;
-}
+const WA_LINK =
+  "https://wa.me/584125828010?text=%C2%A1Hola%20Luz!%20Me%20interesa%20tu%20servicio%20de%20creaci%C3%B3n%20de%20p%C3%A1ginas%20web.%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre...";
 
 export default function Footer() {
   const year = new Date().getFullYear();
-  const hostname =
-    typeof window !== "undefined" ? window.location.hostname : "";
 
   return (
-    <footer
-      id="contacto"
-      className="bg-brand-dark text-white"
-      data-ocid="footer.section"
-    >
-      {/* CTA strip */}
-      <div className="bg-brand-sky py-10">
-        <div className="container max-w-7xl mx-auto px-4 text-center">
-          <h2 className="font-display text-2xl md:text-3xl font-bold text-white mb-2">
-            ¿Listo para tu corte?
-          </h2>
-          <p className="font-body text-white/80 mb-5">
-            ¡Escríbenos por WhatsApp! Yelier Hernandez te atenderá de inmediato
-            💈
-          </p>
-          <a
-            href={waLink()}
-            target="_blank"
-            rel="noopener noreferrer"
-            data-ocid="footer.primary_button"
-            className="inline-flex items-center gap-2 bg-white text-brand-sky font-body font-bold px-8 py-3 rounded-full hover:bg-white/90 transition-colors"
-          >
-            <SiWhatsapp className="h-5 w-5" /> WhatsApp · +58 424 613 7046
-          </a>
-        </div>
-      </div>
+    <footer className="bg-black text-white">
+      {/* Fuchsia top line */}
+      <div className="h-1 bg-gradient-to-r from-transparent via-brand-garnet to-transparent" />
 
-      {/* Main footer */}
-      <div className="py-12">
-        <div className="container max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="container mx-auto px-4 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
           {/* Brand */}
           <div>
-            <div className="flex items-baseline gap-1.5 mb-1">
-              <span className="font-display text-3xl font-bold text-brand-sky">
-                Yilert
-              </span>
-              <span className="font-display text-3xl font-bold text-brand-gold">
-                Barber
-              </span>
-            </div>
-            <p className="font-body text-sm text-white/50 uppercase tracking-widest mb-3">
-              Barbería a domicilio
+            <h2 className="font-display text-2xl font-bold text-white mb-1">
+              Luz Perez
+            </h2>
+            <p className="text-brand-gold text-sm font-semibold tracking-widest uppercase mb-3">
+              Creadora Digital
             </p>
-            <p className="font-body text-white/70 text-sm leading-relaxed">
-              Servicio profesional de barbería a domicilio por Yelier Hernandez.
-              Venezuela — atendemos en tu hogar.
+            <p className="text-white/70 text-sm leading-relaxed">
+              Impulso tu emprendimiento digital con páginas web profesionales,
+              blogs y presencia en redes. Venezuela y el mundo.
             </p>
-            <div className="flex items-center gap-3 mt-4">
-              <a
-                href={waLink()}
-                target="_blank"
-                rel="noopener noreferrer"
-                data-ocid="footer.link"
-                className="p-2 rounded-full bg-white/10 hover:bg-brand-sky transition-colors"
-              >
-                <SiWhatsapp className="h-4 w-4" />
-              </a>
-            </div>
           </div>
 
-          {/* Links */}
+          {/* Nav */}
           <div>
-            <h4 className="font-display font-semibold text-white mb-4">
-              Navegar
-            </h4>
-            <ul className="space-y-2 font-body text-sm text-white/70">
+            <h3 className="font-semibold text-brand-gold uppercase tracking-wide text-xs mb-4">
+              Navegación
+            </h3>
+            <ul className="space-y-2">
               {[
                 ["Inicio", "#inicio"],
                 ["Servicios", "#servicios"],
-                ["Galería", "#galeria"],
+                ["Portafolio", "#portafolio"],
+                ["Calculadora", "#calculadora"],
                 ["Blog", "#blog"],
                 ["Contacto", "#contacto"],
               ].map(([label, href]) => (
-                <li key={label}>
+                <li key={href}>
                   <a
                     href={href}
-                    data-ocid="footer.link"
-                    className="hover:text-white transition-colors"
+                    className="text-white/70 text-sm hover:text-brand-gold transition-colors"
                   >
                     {label}
                   </a>
@@ -102,48 +55,48 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="font-display font-semibold text-white mb-4">
+            <h3 className="font-semibold text-brand-gold uppercase tracking-wide text-xs mb-4">
               Contacto
-            </h4>
-            <ul className="space-y-3 font-body text-sm text-white/70">
-              <li className="flex items-center gap-2">
-                <Phone className="h-4 w-4 text-brand-sky shrink-0" />
-                <a
-                  href={waLink()}
-                  className="hover:text-white transition-colors"
-                >
-                  +58 424 613 7046
-                </a>
-              </li>
-              <li className="flex items-center gap-2">
-                <MapPin className="h-4 w-4 text-brand-sky shrink-0" />
-                <span>Venezuela · Servicio a domicilio</span>
-              </li>
-              <li className="flex items-start gap-2 mt-2 bg-white/5 rounded-lg p-3">
-                <div>
-                  <p className="font-semibold text-white text-xs uppercase tracking-wide">
-                    Barbero
-                  </p>
-                  <p className="text-white/80">Yelier Hernandez</p>
-                </div>
-              </li>
-            </ul>
+            </h3>
+            <div className="space-y-3">
+              <a
+                href={WA_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 text-white/70 hover:text-brand-gold transition-colors text-sm"
+              >
+                <MessageCircle className="h-4 w-4 shrink-0" />
+                +58 412 5828010
+              </a>
+              <a
+                href="mailto:dagneidgutierrez57@gmail.com"
+                className="flex items-center gap-3 text-white/70 hover:text-brand-gold transition-colors text-sm"
+              >
+                <Mail className="h-4 w-4 shrink-0" />
+                dagneidgutierrez57@gmail.com
+              </a>
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Bottom bar */}
-      <div className="border-t border-white/10 py-4">
-        <div className="container max-w-7xl mx-auto px-4 text-center font-body text-xs text-white/40">
-          © {year} YilertBarber — Yelier Hernandez. Construido con ❤️ usando{" "}
-          <a
-            href={`https://caffeine.ai?utm_source=caffeine-footer&utm_medium=referral&utm_content=${encodeURIComponent(hostname)}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline hover:text-white/60 transition-colors"
-          >
-            caffeine.ai
-          </a>
+        {/* Bottom */}
+        <div className="border-t border-white/20 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-white/60 text-sm">
+            © {year} Luz Perez Creadora Digital. Todos los derechos reservados.
+          </p>
+          <p className="text-white/60 text-xs">
+            Hecho con{" "}
+            <Heart className="inline h-3 w-3 text-brand-gold fill-brand-gold" />{" "}
+            usando{" "}
+            <a
+              href={`https://caffeine.ai?utm_source=caffeine-footer&utm_medium=referral&utm_content=${encodeURIComponent(window.location.hostname)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-brand-gold hover:underline"
+            >
+              caffeine.ai
+            </a>
+          </p>
         </div>
       </div>
     </footer>

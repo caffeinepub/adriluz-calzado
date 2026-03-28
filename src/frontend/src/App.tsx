@@ -1,28 +1,32 @@
 import { Toaster } from "@/components/ui/sonner";
-import AnnouncementBar from "./components/AnnouncementBar";
-import Blog from "./components/Blog";
+import BlogSection from "./components/BlogSection";
+import BudgetCalculator from "./components/BudgetCalculator";
+import BusinessImageSection from "./components/BusinessImageSection";
+import ContactSection from "./components/ContactSection";
+import FloatingWhatsApp from "./components/FloatingWhatsApp";
 import Footer from "./components/Footer";
-import Gallery from "./components/Gallery";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
-import HowItWorks from "./components/HowItWorks";
+import Portfolio from "./components/Portfolio";
 import Services from "./components/Services";
-import WhatsAppButton from "./components/WhatsAppButton";
+import Testimonials from "./components/Testimonials";
 
 export default function App() {
   return (
     <div className="min-h-screen bg-background">
-      <AnnouncementBar />
       <Header />
       <main>
         <Hero />
         <Services />
-        <Gallery />
-        <HowItWorks />
-        <Blog />
+        <BusinessImageSection />
+        <Portfolio />
+        <BudgetCalculator />
+        <BlogSection />
+        <Testimonials />
+        <ContactSection />
       </main>
       <Footer />
-      <WhatsAppButton />
+      <FloatingWhatsApp />
       <Toaster />
     </div>
   );
